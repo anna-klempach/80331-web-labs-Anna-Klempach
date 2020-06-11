@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MenuItem>
+@{
+    Layout = null;
+}
+
+    <div class="navbar-nav">
+        @foreach (var item in Model)
+        {
+            if (item.isRazorPage == true)
+            {
+                <a class="nav-item nav-link @item.activeClassName" asp-area="@item.areaName"
+                   asp-page="@item.pageName">@item.itemText</a>
+            }
+            else
+            {
+                <a class="nav-item nav-link @item.activeClassName"
+                   asp-controller="@item.controllerName"
+                   asp-action="@item.methodName">@item.itemText</a>
+            }
+
+        }
+    </div>
