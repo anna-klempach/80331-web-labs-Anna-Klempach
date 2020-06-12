@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace Lab1_Klempach.Areas.Identity.Pages.Account
 {
@@ -61,6 +62,7 @@ namespace Lab1_Klempach.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            public IFormFile UserImage { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -76,6 +78,18 @@ namespace Lab1_Klempach.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+                if (Input.UserImage != null)
+                {
+                    user.UserImage = new byte[(int)Input.UserImage.Length];
+                    await Input.UserImage
+                        .OpenReadStream()
+                        .ReadAsync(
+                            user.UserImage,
+                            0,
+                            (int)Input.UserImage.Length
+                        );
+                    user.ImageMimeType = Input.UserImage.ContentType;
+                }
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

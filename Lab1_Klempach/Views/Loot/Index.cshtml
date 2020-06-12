@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Loot>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Catalog</h1>
+
+<div class="row">
+@foreach (var item in Model)
+{
+    <div class='col-md-4'>
+        <div class='card m-2 p-1'>
+            <img src="~/Images/@item.LootImageName"
+                 alt='NoImage'
+                 class="card-img" />
+            <div class="card-body">
+                <h5 class="card-title">
+                    @item.LootName
+                </h5>
+                <p class="card-text">
+                    @item.LootDescription
+                </p>
+                <div class="card-subtitle badge">
+                    <h4> @item.LootPrice </h4>
+                </div>
+                @{ // Получение текущего адреса
+                    var request = ViewContext.HttpContext.Request;
+                    var returnUrl = request.Path +
+                    request.QueryString.ToUriComponent();
+                }
+                <div>
+                    <a asp-action="Add"
+                       asp-controller="Cart"
+                       asp-route-id="@item.LootId"
+                       asp-route-returnUrl="@returnUrl"
+                       class="btn btn-primary">
+                        <i class="fa fa-shopping-cart"></i> В корзину
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</div>

@@ -15,7 +15,7 @@ namespace Lab1_Klempach.Views.Shared.Components
             menuItems = new List<MenuItem>
             {
                 new MenuItem{controllerName="Home", methodName="Index", itemText="Лабораторная"},
-                new MenuItem{controllerName="Product", methodName="Index", itemText="Каталог"},
+                new MenuItem{controllerName="Loot", methodName="Index", itemText="Каталог"},
                 new MenuItem{isRazorPage=true, areaName="Admin", pageName="/Index", itemText="Администрирование"}
             };
             foreach (MenuItem item in menuItems)

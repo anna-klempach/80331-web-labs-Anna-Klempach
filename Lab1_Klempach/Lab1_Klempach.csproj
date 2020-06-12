@@ -17,11 +17,6 @@
 
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
-  </ItemGroup>
-
-
-  <ItemGroup>
     <ProjectReference Include="..\Lab1_Klempach.DAL\Lab1_Klempach.DAL.csproj" />
   </ItemGroup>
 
