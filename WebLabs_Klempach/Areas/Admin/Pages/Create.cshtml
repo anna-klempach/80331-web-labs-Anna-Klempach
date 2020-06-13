@@ -1,0 +1,65 @@
+﻿@page
+@model WebLabs_Klempach.Areas.Admin.Pages.CreateModel
+@section Scripts{
+    <script src="~/js/bs-custom-file-input.js"></script>
+    <script>
+        bsCustomFileInput.init();
+    </script>
+}
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Loot</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Loot.LootName" class="control-label"></label>
+                <input asp-for="Loot.LootName" class="form-control" />
+                <span asp-validation-for="Loot.LootName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Loot.LootDescription" class="control-label"></label>
+                <input asp-for="Loot.LootDescription" class="form-control" />
+                <span asp-validation-for="Loot.LootDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Loot.LootPrice" class="control-label"></label>
+                <input asp-for="Loot.LootPrice" class="form-control" />
+                <span asp-validation-for="Loot.LootPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Loot.LootImageName" class="control-label"></label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile" name="image">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+                @*<input asp-for="Loot.LootImageName" class="form-control" />
+        <span asp-validation-for="Loot.LootImageName" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Loot.LootImageMimeType" class="control-label"></label>
+                <input asp-for="Loot.LootImageMimeType" class="form-control" />
+                <span asp-validation-for="Loot.LootImageMimeType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Loot.LootCategoryId" class="control-label"></label>
+                <select asp-for="Loot.LootCategoryId" class="form-control" asp-items="ViewBag.LootCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

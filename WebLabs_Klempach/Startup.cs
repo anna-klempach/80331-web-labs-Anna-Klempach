@@ -8,6 +8,9 @@ using Microsoft.Extensions.Hosting;
 using WebLabs_Klempach.DAL.Data;
 using WebLabs_Klempach.DAL.Entities;
 using WebLabs_Klempach.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using WebLabs_Klempach.Models;
 
 namespace WebLabs_Klempach
 {
@@ -38,6 +41,15 @@ namespace WebLabs_Klempach
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession(opt =>
+            {
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.IsEssential = true;
+            });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<Cart>(sp => CartService.GetCart(sp));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +77,7 @@ namespace WebLabs_Klempach
             app.UseRouting();
 
             app.UseAuthentication();
+            app.UseSession();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

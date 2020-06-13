@@ -4,6 +4,9 @@ using WebLabs_Klempach.DAL.Entities;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using WebLabs_Klempach.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using WebLabs_Klempach.DAL.Data;
 
 namespace WebLabs_Klempach.Tests
 {
@@ -13,32 +16,66 @@ namespace WebLabs_Klempach.Tests
         [MemberData(nameof(Data))]
         public void ControllerGetsProperPage(int currentPage, int itemsQuantity, int firstItemId)
         {
-            var controller = new LootController();
-            controller._lootList = GetLootList();
-
-            var result = controller.Index(category: null, currentPage) as ViewResult;
-            var model = result.Model as List<Loot>;
-
-            Assert.NotNull(model);
-            Assert.Equal(itemsQuantity, model.Count);
-            Assert.Equal(firstItemId, model[0].LootId);
+            var controllerContext = new ControllerContext();
+            var httpContext = new DefaultHttpContext();
+            httpContext.Request.Headers.Add("x-requested-with", "");
+            controllerContext.HttpContext = httpContext;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase(databaseName: "TestDb")
+                .Options;
+            using (var context = new ApplicationDbContext(options))
+            {
+                context.Loot.AddRange(GetLootList());
+                context.LootCategories.Add(new LootCategory { LootCategoryName = "Test category" });
+                context.SaveChanges();
+                var controller = new LootController(context)
+                {
+                    ControllerContext = controllerContext
+                };
+                var result = controller.Index(pageNumber: currentPage, category: null) as ViewResult;
+                var model = result?.Model as List<Loot>;
+                Assert.NotNull(model);
+                Assert.Equal(itemsQuantity, model.Count);
+                Assert.Equal(firstItemId, model[0].LootId);
+            }
+            using (var context = new ApplicationDbContext(options))
+            {
+                context.Database.EnsureDeleted();
+            }
         }
         [Theory]
         [InlineData(1, 3, 0)]
         [InlineData(2, 2, 3)]
         public void ControllerSelectsProperItems(int categoryId, int itemsQuantity, int index)
         {
-            var controller = new LootController();
-            controller._lootList = GetLootList();
+            var controllerContext = new ControllerContext();
+            var httpContext = new DefaultHttpContext();
+            httpContext.Request.Headers.Add("x-requested-with", "");
+            controllerContext.HttpContext = httpContext;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase(databaseName: "TestDb")
+                .Options;
+            using (var context = new ApplicationDbContext(options))
+            {
+                context.Loot.AddRange(GetLootList());
+                context.LootCategories.Add(new LootCategory { LootCategoryName = "Test category" });
+                context.SaveChanges();
+                var controller = new LootController(context)
+                {
+                    ControllerContext = controllerContext
+                };
 
-            var result = controller.Index(categoryId, 1) as ViewResult;
-            var model = result.Model as List<Loot>;
+                var result = controller.Index(categoryId, 1) as ViewResult;
+                var model = result.Model as List<Loot>;
 
-            Assert.NotNull(model);
-            Assert.Equal(itemsQuantity, model.Count);
-            Assert.Equal(GetLootList()[index],
-                model[0],
-                Comparer<Loot>.GetComparer((loot1, loot2) => loot1.LootCategoryId == loot2.LootCategoryId));
+                Assert.NotNull(model);
+                Assert.Equal(itemsQuantity, model.Count);
+                Assert.Equal(GetLootList()[index],
+                    model[0],
+                    Comparer<Loot>.GetComparer((loot1, loot2) => loot1.LootCategoryId == loot2.LootCategoryId));
+            }
+            using (var context = new ApplicationDbContext(options))
+            {
+                context.Database.EnsureDeleted();
+            }
         }
 
         [Theory]

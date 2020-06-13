@@ -1,0 +1,62 @@
+﻿@page
+@model WebLabs_Klempach.Areas.Admin.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Administration";
+}
+
+<p>
+    <a asp-page="Create" class="btn btn-primary btn-lg">
+        <span class="fa fa-plus"></span>
+        Create New
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loot[0].LootName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loot[0].LootDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loot[0].LootPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loot[0].Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Loot) {
+        <tr>
+            <td>
+                <img src="~/Images/@item.LootImageName" alt="NoImage" width="50" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LootName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LootDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LootPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.LootCategoryId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.LootId" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Edit">
+                    <span class="fa fa-pen-alt"></span>
+                </a>
+                <a asp-page="./Delete" asp-route-id="@item.LootId" class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Delete">
+                    <span class="fa fa-skull-crossbones"></span>
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

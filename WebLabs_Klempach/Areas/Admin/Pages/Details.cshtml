@@ -1,0 +1,55 @@
+﻿@page
+@model WebLabs_Klempach.Areas.Admin.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Loot</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Loot.LootName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Loot.LootName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Loot.LootDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Loot.LootDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Loot.LootPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Loot.LootPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Loot.LootImageName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Loot.LootImageName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Loot.LootImageMimeType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Loot.LootImageMimeType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Loot.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Loot.Category.LootCategoryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Loot.LootId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

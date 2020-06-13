@@ -39,11 +39,26 @@ namespace WebLabs_Klempach.DAL.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    UserImage = table.Column<byte[]>(nullable: true),
+                    ImageMimeType = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LootCategories",
+                columns: table => new
+                {
+                    LootCategoryId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LootCategoryName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LootCategories", x => x.LootCategoryId);
                 });
 
             migrationBuilder.CreateTable(
@@ -152,6 +167,30 @@ namespace WebLabs_Klempach.DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Loot",
+                columns: table => new
+                {
+                    LootId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LootName = table.Column<string>(nullable: true),
+                    LootDescription = table.Column<string>(nullable: true),
+                    LootPrice = table.Column<double>(nullable: false),
+                    LootImageName = table.Column<string>(nullable: true),
+                    LootImageMimeType = table.Column<string>(nullable: true),
+                    LootCategoryId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Loot", x => x.LootId);
+                    table.ForeignKey(
+                        name: "FK_Loot_LootCategories_LootCategoryId",
+                        column: x => x.LootCategoryId,
+                        principalTable: "LootCategories",
+                        principalColumn: "LootCategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -190,6 +229,11 @@ namespace WebLabs_Klempach.DAL.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Loot_LootCategoryId",
+                table: "Loot",
+                column: "LootCategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -210,10 +254,16 @@ namespace WebLabs_Klempach.DAL.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Loot");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "LootCategories");
         }
     }
 }

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebLabs_Klempach.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label>Loot</label>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <label>@item.Loot.LootName</label>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-controller="Cart" asp-route-id="@item.Loot.LootId" class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Delete">
+                    <span class="fa fa-skull-crossbones"></span>
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

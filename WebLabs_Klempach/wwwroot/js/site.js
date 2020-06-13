@@ -8,3 +8,7 @@
         history.pushState(null, null, url);
     });
 });
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
