@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lab1_Klempach.DAL\WebLabs_Klempach.DAL.csproj" />
-    <ProjectReference Include="..\Lab1_Klempach\WebLabs_Klempach.csproj" />
+    <ProjectReference Include="..\WebLabs_Klempach.DAL\WebLabs_Klempach.DAL.csproj" />
+    <ProjectReference Include="..\WebLabs_Klempach\WebLabs_Klempach.csproj" />
   </ItemGroup>
 
 </Project>

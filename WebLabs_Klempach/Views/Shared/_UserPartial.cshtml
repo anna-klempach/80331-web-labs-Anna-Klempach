@@ -9,13 +9,20 @@
         <div class="dropdown-toggle" id="dropdownMenuButton"
              data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">
-            <img src="@Url.Action("GetUserImage", "UserImage")" width="30"
+            <img img-action="GetUserImage"
+                 img-controller="UserImage"
+                 width="30"
                  alt="User" class="rounded bg-light" />
         </div>
         <div class="dropdown-menu"
              aria-labelledby="dropdownMenuButton">
             <div class="dropdown-item-text">
-                <img src="@Url.Action("GetUserImage", "UserImage")" width="50" alt="User" class="rounded bg-light" />
+                <img 
+                     img-action="GetUserImage"
+                     img-controller="UserImage"
+                     width="50"
+                     alt="User"
+                     class="rounded bg-light" />
                 @User.Identity.Name
             </div>
             <div class="dropdown-divider"></div>

@@ -1,5 +1,4 @@
 using WebLabs_Klempach.Controllers;
-using System;
 using Xunit;
 using WebLabs_Klempach.DAL.Entities;
 using System.Collections.Generic;

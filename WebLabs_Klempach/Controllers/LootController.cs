@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebLabs_Klempach.DAL.Entities;
-using System.Security.Policy;
 using WebLabs_Klempach.Models;
-using System.Text.RegularExpressions;
+using WebLabs_Klempach.Extensions;
 
 namespace WebLabs_Klempach.Controllers
 {
@@ -22,6 +19,8 @@ namespace WebLabs_Klempach.Controllers
             _pageSize = 3;
             RenderContent();
         }
+        [Route("Catalog")]
+        [Route("Catalog/Page_{pageNumber}")]
         public IActionResult Index(int? category, int pageNumber = 1)
         {
             var filteredLootList = _lootList
@@ -31,6 +30,8 @@ namespace WebLabs_Klempach.Controllers
                 ? category
                 : 0;
             ViewData["CurrentCategory"] = lootCategory;
+            if (Request.IsAjaxRequest())
+                return PartialView("_ListPartial", ListViewModel<Loot>.GetModel(filteredLootList, pageNumber, _pageSize));
             return View(ListViewModel<Loot>.GetModel(filteredLootList, pageNumber, _pageSize));
         }
 
