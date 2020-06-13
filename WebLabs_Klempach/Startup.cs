@@ -11,6 +11,8 @@ using WebLabs_Klempach.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using WebLabs_Klempach.Models;
+using WebLabs_Klempach.Extensions;
+using WebLabs_Klempach.Data;
 
 namespace WebLabs_Klempach
 {
@@ -50,6 +52,9 @@ namespace WebLabs_Klempach
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<Cart>(sp => CartService.GetCart(sp));
+
+            services.AddDbContext<Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +84,7 @@ namespace WebLabs_Klempach
             app.UseAuthentication();
             app.UseSession();
             app.UseAuthorization();
+            app.UseLogging();
 
             app.UseEndpoints(endpoints =>
             {

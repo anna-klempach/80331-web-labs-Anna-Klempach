@@ -5,21 +5,22 @@ using WebLabs_Klempach.DAL.Entities;
 using WebLabs_Klempach.Models;
 using WebLabs_Klempach.Extensions;
 using WebLabs_Klempach.DAL.Data;
+using Microsoft.Extensions.Logging;
 
 namespace WebLabs_Klempach.Controllers
 {
     public class LootController : Controller
     {
-        List<LootCategory> _lootCategoryList;
         int _pageSize;
 
-        public List<Loot> _lootList;
         ApplicationDbContext _context;
+        private ILogger _logger;
 
-        public LootController(ApplicationDbContext context)
+        public LootController(ApplicationDbContext context, ILogger<LootController> logger)
         {
             _pageSize = 3;
             _context = context;
+            _logger = logger;
         }
         [Route("Catalog")]
         [Route("Catalog/Page_{pageNumber}")]
@@ -31,6 +32,12 @@ namespace WebLabs_Klempach.Controllers
             var lootCategory = category.HasValue
                 ? category
                 : 0;
+
+            /* var categoryName = category.HasValue && category != 0
+                ? _context.LootCategories.Find(category.Value)?.LootCategoryName
+                : "All";
+            _logger.LogInformation($"info: category = {categoryName}, page = {pageNumber}"); */
+
             ViewData["CurrentCategory"] = lootCategory;
             if (Request.IsAjaxRequest())
                 return PartialView("_ListPartial", ListViewModel<Loot>.GetModel(filteredLootList, pageNumber, _pageSize));
