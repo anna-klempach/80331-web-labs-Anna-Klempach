@@ -1,12 +1,12 @@
-﻿using Lab1_Klempach.DAL.Data;
-using Lab1_Klempach.DAL.Entities;
+﻿using WebLabs_Klempach.DAL.Data;
+using WebLabs_Klempach.DAL.Entities;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Lab1_Klempach.Services
+namespace WebLabs_Klempach.Services
 {
     public class DbInitializer
     {

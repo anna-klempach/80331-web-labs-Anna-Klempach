@@ -1,0 +1,33 @@
+﻿
+@model Loot
+
+<div class='card m-2 p-1'>
+    <img src="~/Images/@Model.LootImageName"
+         alt='NoImage'
+         class="card-img" />
+    <div class="card-body">
+        <h5 class="card-title">
+            @Model.LootName
+        </h5>
+        <p class="card-text">
+            @Model.LootDescription
+        </p>
+        <div class="card-subtitle badge">
+            <h4> @Model.LootPrice </h4>
+        </div>
+        @{
+            var request = ViewContext.HttpContext.Request;
+            var returnUrl = request.Path +
+            request.QueryString.ToUriComponent();
+        }
+        <div>
+            <a asp-action="Add"
+               asp-controller="Cart"
+               asp-route-id="@Model.LootId"
+               asp-route-returnUrl="@returnUrl"
+               class="btn btn-primary">
+               <i class="fa fa-shopping-cart"></i> В корзину
+            </a>
+        </div>
+    </div>
+</div>

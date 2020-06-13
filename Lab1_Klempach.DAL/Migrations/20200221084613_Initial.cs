@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Lab1_Klempach.DAL.Migrations
+namespace WebLabs_Klempach.DAL.Migrations
 {
     public partial class Initial : Migration
     {

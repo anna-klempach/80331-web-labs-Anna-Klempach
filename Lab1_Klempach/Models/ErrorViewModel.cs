@@ -1,6 +1,6 @@
 using System;
 
-namespace Lab1_Klempach.Models
+namespace WebLabs_Klempach.Models
 {
     public class ErrorViewModel
     {

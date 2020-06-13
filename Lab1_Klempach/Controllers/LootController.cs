@@ -3,23 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Lab1_Klempach.DAL.Entities;
+using WebLabs_Klempach.DAL.Entities;
 using System.Security.Policy;
+using WebLabs_Klempach.Models;
+using System.Text.RegularExpressions;
 
-namespace Lab1_Klempach.Controllers
+namespace WebLabs_Klempach.Controllers
 {
     public class LootController : Controller
     {
-        List<Loot> _lootList;
         List<LootCategory> _lootCategoryList;
+        int _pageSize;
+
+        public List<Loot> _lootList;
 
         public LootController()
         {
+            _pageSize = 3;
             RenderContent();
         }
-        public IActionResult Index()
+        public IActionResult Index(int? category, int pageNumber = 1)
         {
-            return View(_lootList);
+            var filteredLootList = _lootList
+                .Where(item => !category.HasValue || item.LootCategoryId == category.Value || category.Value == 0);
+            ViewData["LootCategories"] = _lootCategoryList;
+            var lootCategory = category.HasValue
+                ? category
+                : 0;
+            ViewData["CurrentCategory"] = lootCategory;
+            return View(ListViewModel<Loot>.GetModel(filteredLootList, pageNumber, _pageSize));
         }
 
         public void RenderContent()

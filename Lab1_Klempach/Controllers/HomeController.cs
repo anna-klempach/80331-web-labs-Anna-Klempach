@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Lab1_Klempach.Controllers
+namespace WebLabs_Klempach.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,4 +1,4 @@
-﻿namespace Lab1_Klempach.Controllers
+﻿namespace WebLabs_Klempach.Controllers
 {
     internal class ListDemo
     {

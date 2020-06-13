@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Lab1_Klempach.DAL.Data;
-using Lab1_Klempach.DAL.Entities;
-using Lab1_Klempach.Services;
+using WebLabs_Klempach.DAL.Data;
+using WebLabs_Klempach.DAL.Entities;
+using WebLabs_Klempach.Services;
 
-namespace Lab1_Klempach
+namespace WebLabs_Klempach
 {
     public class Startup
     {

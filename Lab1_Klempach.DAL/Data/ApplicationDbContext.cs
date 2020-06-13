@@ -1,11 +1,11 @@
-﻿using Lab1_Klempach.DAL.Entities;
+﻿using WebLabs_Klempach.DAL.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lab1_Klempach.DAL.Data
+namespace WebLabs_Klempach.DAL.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

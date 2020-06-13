@@ -1,45 +1,50 @@
-﻿@model IEnumerable<Loot>
+﻿@model ListViewModel<Loot>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Catalog";
 }
 
-<h1>Catalog</h1>
+@{
+    var categories = ViewData["LootCategories"] as IEnumerable<LootCategory>;
+    int currentCategory = (int)ViewData["CurrentCategory"];
+    var menuText = currentCategory != 0
+        ? categories
+            .FirstOrDefault(category => category.LootCategoryId == currentCategory)?
+            .LootCategoryName
+        : "All";
+}
 
-<div class="row">
-@foreach (var item in Model)
-{
-    <div class='col-md-4'>
-        <div class='card m-2 p-1'>
-            <img src="~/Images/@item.LootImageName"
-                 alt='NoImage'
-                 class="card-img" />
-            <div class="card-body">
-                <h5 class="card-title">
-                    @item.LootName
-                </h5>
-                <p class="card-text">
-                    @item.LootDescription
-                </p>
-                <div class="card-subtitle badge">
-                    <h4> @item.LootPrice </h4>
-                </div>
-                @{ // Получение текущего адреса
-                    var request = ViewContext.HttpContext.Request;
-                    var returnUrl = request.Path +
-                    request.QueryString.ToUriComponent();
+    <div>
+        <div class="row">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @menuText
+                </button>
+                <div class="dropdown-menu">
+                    @foreach (var item in categories)
+                {
+                    <a class="dropdown-item"
+                       asp-action="Index"
+                       asp-controller="Loot"
+                       asp-route-category="@item.LootCategoryId">
+                        @item.LootCategoryName
+                    </a>
                 }
-                <div>
-                    <a asp-action="Add"
-                       asp-controller="Cart"
-                       asp-route-id="@item.LootId"
-                       asp-route-returnUrl="@returnUrl"
-                       class="btn btn-primary">
-                        <i class="fa fa-shopping-cart"></i> В корзину
+                    <a class="dropdown-item"
+                       asp-action="Index"
+                       asp-controller="Loot"
+                       asp-route-category="0">
+                        All
                     </a>
                 </div>
             </div>
         </div>
-    </div>
-}
+        <div class="row">
+            <div class="card-group">
+                @foreach (var item in Model)
+                {
+                    <partial name="_ListItemPartial" model="item"></partial>
+                }
+            </div> 
+        </div>
 </div>

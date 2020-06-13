@@ -1,11 +1,11 @@
-﻿using Lab1_Klempach.Models;
+﻿using WebLabs_Klempach.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Lab1_Klempach.Views.Shared.Components
+namespace WebLabs_Klempach.Views.Shared.Components
 {
     public class MenuItemViewComponent : ViewComponent
     {

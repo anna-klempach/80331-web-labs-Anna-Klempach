@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Lab1_Klempach.DAL.Entities;
+using WebLabs_Klempach.DAL.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 
-namespace Lab1_Klempach.Controllers
+namespace WebLabs_Klempach.Controllers
 {
     public class UserImageController : Controller
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Lab1_Klempach.Views.Shared.Components.Cart
+namespace WebLabs_Klempach.Views.Shared.Components.Cart
 {
     public class CartViewComponent : ViewComponent
     {
