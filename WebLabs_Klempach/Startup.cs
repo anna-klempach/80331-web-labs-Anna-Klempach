@@ -42,7 +42,8 @@ namespace WebLabs_Klempach
                 .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
             services.AddDistributedMemoryCache();
             services.AddSession(opt =>
             {
@@ -76,6 +77,8 @@ namespace WebLabs_Klempach
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseBrowserLink();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

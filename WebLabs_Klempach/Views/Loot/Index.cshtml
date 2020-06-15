@@ -40,15 +40,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="card-group" id="list">
-                <partial name="_ListPartial" model="@Model"></partial>
+            <div class="card-list" id="list">
+                <partial name="_ListPartial" model="@Model"/>
             </div> 
         </div>
-        <paginator
-            current-page="@Model.CurrentPage"
-            total-pages-number="@Model.NumberOfPages"
-            action="Index"
-            controller="Loot"
-            category-id="@currentCategory">
+        <div class="row pagination-row">
+            <paginator current-page="@Model.CurrentPage"
+                       total-pages-number="@Model.NumberOfPages"
+                       action="Index"
+                       controller="Loot"
+                       category-id="@currentCategory">
             </paginator>
+        </div>
+        
 </div>
