@@ -1,5 +1,3 @@
-using System;
-
 namespace WebLabs_Klempach.Models
 {
     public class ErrorViewModel

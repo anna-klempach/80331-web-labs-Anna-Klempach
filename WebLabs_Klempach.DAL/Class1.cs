@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WebLabs_Klempach.DAL
+﻿namespace WebLabs_Klempach.DAL
 {
     public class Class1
     {

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebLabs_Klempach.Extensions;
 
 namespace WebLabs_Klempach.Views.Shared.Components.Cart
 {

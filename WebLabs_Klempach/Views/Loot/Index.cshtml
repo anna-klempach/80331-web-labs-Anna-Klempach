@@ -1,7 +1,8 @@
 ﻿@model ListViewModel<Loot>
 
 @{
-    ViewData["Title"] = "Catalog";
+    ViewData["Title"] = "Loot Shop";
+    ViewData["Subtitle"] = "Catalog";
 }
 
 @{
@@ -15,6 +16,8 @@
 }
 
     <div>
+        <h1>@ViewData["Title"]</h1>
+        <h2>@ViewData["Subtitle"]</h2>
         <div class="row">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

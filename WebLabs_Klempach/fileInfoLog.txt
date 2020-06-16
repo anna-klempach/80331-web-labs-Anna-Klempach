@@ -187,3 +187,138 @@ Application started. Press Ctrl+C to shut down.
 Hosting environment: Development
 Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
 16.06.2020 - 2:35:47: url: /Cart/Create returns 404
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+16.06.2020 - 2:40:55: url: /js/bs-custom-file-input.js.map returns 404
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+16.06.2020 - 22:54:58: url: /Admin/Create returns 302
+16.06.2020 - 22:55:06: url: /Admin/Delete/11 returns 302
+16.06.2020 - 22:55:25: url: /Admin/Create returns 302
+16.06.2020 - 22:55:39: url: /Admin/Edit/12 returns 302
+16.06.2020 - 22:56:09: url: /Cart/Add/2?returnUrl=%2FCatalog returns 302
+16.06.2020 - 22:56:11: url: /Cart/Add/2?returnUrl=%2FCatalog returns 302
+16.06.2020 - 22:56:12: url: /Cart/Add/4?returnUrl=%2FCatalog returns 302
+16.06.2020 - 22:56:15: url: /Cart/Add/9?returnUrl=%2FCatalog%3Fcategory%3D4 returns 302
+16.06.2020 - 22:56:20: url: /Cart/Add/8?returnUrl=%2FCatalog%3Fcategory%3D3 returns 302
+16.06.2020 - 22:56:21: url: /Cart/Add/12?returnUrl=%2FCatalog%3Fcategory%3D3 returns 302
+16.06.2020 - 22:56:32: url: /Cart/Delete/8 returns 302
+16.06.2020 - 22:56:34: url: /Cart/Delete/2 returns 302
+16.06.2020 - 22:56:36: url: /Cart/Delete/9 returns 302
+16.06.2020 - 22:56:36: url: /Cart/Delete/4 returns 302
+16.06.2020 - 22:56:37: url: /Cart/Delete/12 returns 302
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+User logged out.
+16.06.2020 - 23:17:11: url: /Identity/Account/Logout?returnurl=%2F returns 302
+User created a new account with password.
+16.06.2020 - 23:19:09: url: /Identity/Account/Register returns 302
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+User logged out.
+16.06.2020 - 23:34:11: url: /Identity/Account/Logout?returnurl=%2F returns 302
+User created a new account with password.
+16.06.2020 - 23:34:37: url: /Identity/Account/Register returns 302
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+User logged out.
+16.06.2020 - 23:38:28: url: /Identity/Account/Logout?returnurl=%2F returns 302
+User created a new account with password.
+16.06.2020 - 23:40:02: url: /Identity/Account/Register returns 302
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+16.06.2020 - 23:42:27: url: /Loot/UserProducts returns 404
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+16.06.2020 - 23:45:54: url: /Cart/Create returns 404
+16.06.2020 - 23:46:20: url: /Loot/UserProducts returns 404
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+User logged out.
+16.06.2020 - 23:58:41: url: /Identity/Account/Logout?returnurl=%2FAdmin returns 302
+User created a new account with password.
+16.06.2020 - 23:59:42: url: /Identity/Account/Register returns 302
+16.06.2020 - 23:59:54: url: /Cart/Add/3?returnUrl=%2FCatalog returns 302
+16.06.2020 - 23:59:56: url: /Cart/Add/4?returnUrl=%2FCatalog returns 302
+17.06.2020 - 0:00:06: url: /Cart/Delete/4 returns 302
+17.06.2020 - 0:00:07: url: /Cart/Delete/3 returns 302
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+17.06.2020 - 0:18:30: url: /Cart/Add/2?returnUrl=%2FCatalog returns 302
+17.06.2020 - 0:18:46: url: /Cart/Add/5?returnUrl=%2FCatalog%3Fcategory%3D1 returns 302
+17.06.2020 - 0:18:55: url: /Cart/Add/12?returnUrl=%2FCatalog%3Fcategory%3D3 returns 302
+17.06.2020 - 0:19:35: url: /Cart/Add/9?returnUrl=%2FCatalog%3Fcategory%3D4 returns 302
+17.06.2020 - 0:20:06: url: /Cart/Delete/12 returns 302
+17.06.2020 - 0:20:07: url: /Cart/Delete/2 returns 302
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Ann\Documents\BSUIR\4 семестр\Web\labs 1-3.5\WebLabs_Klempach\WebLabs_Klempach

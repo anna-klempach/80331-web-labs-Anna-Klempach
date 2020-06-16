@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebLabs_Klempach.DAL.Entities;
 using WebLabs_Klempach.Models;
@@ -32,11 +31,6 @@ namespace WebLabs_Klempach.Controllers
             var lootCategory = category.HasValue
                 ? category
                 : 0;
-
-            /* var categoryName = category.HasValue && category != 0
-                ? _context.LootCategories.Find(category.Value)?.LootCategoryName
-                : "All";
-            _logger.LogInformation($"info: category = {categoryName}, page = {pageNumber}"); */
 
             ViewData["CurrentCategory"] = lootCategory;
             if (Request.IsAjaxRequest())

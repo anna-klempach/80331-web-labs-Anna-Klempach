@@ -27,7 +27,7 @@ namespace WebLabs_Klempach.Tests
                 context.Loot.AddRange(GetLootList());
                 context.LootCategories.Add(new LootCategory { LootCategoryName = "Test category" });
                 context.SaveChanges();
-                var controller = new LootController(context)
+                var controller = new LootController(context, null)
                 {
                     ControllerContext = controllerContext
                 };
@@ -58,7 +58,7 @@ namespace WebLabs_Klempach.Tests
                 context.Loot.AddRange(GetLootList());
                 context.LootCategories.Add(new LootCategory { LootCategoryName = "Test category" });
                 context.SaveChanges();
-                var controller = new LootController(context)
+                var controller = new LootController(context, null)
                 {
                     ControllerContext = controllerContext
                 };

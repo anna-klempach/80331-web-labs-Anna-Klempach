@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<WebLabs_Klempach.Models.CartItem>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cart";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -16,7 +13,7 @@
                 <label>Loot</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
+                <label>@Html.DisplayNameFor(model => model.Quantity)</label>
             </th>
             <th></th>
         </tr>

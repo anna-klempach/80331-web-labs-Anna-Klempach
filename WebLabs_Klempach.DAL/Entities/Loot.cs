@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WebLabs_Klempach.DAL.Entities
+﻿namespace WebLabs_Klempach.DAL.Entities
 {
     public class Loot
     {

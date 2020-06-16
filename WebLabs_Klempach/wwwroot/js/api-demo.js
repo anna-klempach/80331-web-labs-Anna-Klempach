@@ -24,9 +24,10 @@ function createRow(index, data) {
 function showDetails(e) {
     // Послать запрос
     $.getJSON(uri + "/" + e.data, function (data) {
-        // строка информации об объекте
-        var details = data.lootName + ": "
-            + data.lootDescription + " - "
+        $("#name") // Найти блок для информации
+            .empty()
+            .text(data.lootName + ":");
+        var details = data.lootDescription + " - "
             + data.lootPrice + "$";
         $("#details") // Найти блок для информации
             .empty()

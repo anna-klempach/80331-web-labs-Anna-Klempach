@@ -7,34 +7,38 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link rel="icon" href="~/lib/favicon.png">
 </head>
 <body>
     <header>
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center nav-fill">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">803312</a>
-                @await  Component.InvokeAsync("MenuItem")
-                <partial name="_UserPartial">
-            </nav> <!-- Панель навигации - конец -->
-    </header><!-- header - конец -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center nav-fill">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="~/Images/logo.jpg" width="50" height="50" alt="logo" loading="lazy">
+                    80331
+            </a>
+            @await  Component.InvokeAsync("MenuItem")
+            <partial name="_UserPartial">
+        </nav>
+    </header>
     <main>
         <div class="main-container">
             @RenderBody()
         </div>
     </main>
     <footer class="fixed-bottom">
-            <div class="navbar navbar-dark navbar-expand-md bg-dark">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="http://www.facebook.com">
-                        <i class="fab fa-facebook-f fa-2x"></i>
-                    </a>
-                    <a class="nav-item nav-link" href="http://www.vk.com">
-                        <i class="fab fa-vk fa-2x"></i>
-                    </a>
-                    <a class="nav-item nav-link" href="http://www.twitter.com">
-                        <i class="fab fa-twitter fa-2x"></i>
-                    </a>
-                </div>
+        <div class="navbar navbar-dark navbar-expand-md bg-dark">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="http://www.facebook.com">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                </a>
+                <a class="nav-item nav-link" href="http://www.vk.com">
+                    <i class="fab fa-vk fa-2x"></i>
+                </a>
+                <a class="nav-item nav-link" href="http://www.twitter.com">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
             </div>
+        </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

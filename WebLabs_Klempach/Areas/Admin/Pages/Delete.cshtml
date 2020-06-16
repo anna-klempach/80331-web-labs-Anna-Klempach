@@ -50,9 +50,12 @@
         </dd>
     </dl>
     
-    <form method="post">
+    <form method="post" class="row">
         <input type="hidden" asp-for="Loot.LootId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="Index" class="btn btn-info btn-admin btn-back">
+            <span class="fa fa-arrow-alt-circle-left"></span>
+            Back to List
+        </a>
     </form>
 </div>
